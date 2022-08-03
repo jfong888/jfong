@@ -17,3 +17,4 @@ create table customerinfo (
    constraint fk_cinfo_gj2 FOREIGN KEY (customerpasswd) REFERENCES gojoanimelogin (iduserlogin)
 );
 
+
