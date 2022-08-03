@@ -1,3 +1,8 @@
+DROP SCHEMA IF EXISTS 'gojoanime';
+
+CREATE SCHEMA IF NOT EXISTS 'gojoanime' DEFAULT CHARACTER SET utf8;
+USE 'gojoanime'
+
 create table gojoanimelogin (
     iduserlogin NUMBER(38,0) NOT NULL,
     username VARCHAR(20) NOT NULL,
@@ -17,4 +22,9 @@ create table customerinfo (
    constraint fk_cinfo_gj2 FOREIGN KEY (customerpasswd) REFERENCES gojoanimelogin (iduserlogin)
 );
 
-
+create table watchanimepage (
+   idanimesession number(38,0) NOT NULL,
+   customer_idcustomer int NOT NULL,
+   PRIMARY KEY (idanimesession),
+   constraint fk_cinfo_gjl FOREIGN KEY (customer_idcustomer) REFERENCES customerinfo (idcustomer)
+);
