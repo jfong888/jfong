@@ -35,3 +35,12 @@ create table watchanimepage (
    watchedanime varchar(100) NOT NULL,
    PRIMARY KEY (idanimesession)
 );
+
+create table ContactUs (
+    idsession number(38,0) AUTO_INCREMENT,
+    firstname VARCHAR(40) NOT NULL,
+    lastname VARCHAR(40) NOT NULL,
+    email VARCHAR(35) NOT NULL, 
+    phonenumber VARCHAR(35) NOT NULL,
+    PRIMARY KEY (idsession)
+)
