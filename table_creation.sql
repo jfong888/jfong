@@ -1,12 +1,12 @@
-DROP SCHEMA IF EXISTS 'gojoanime';
+DROP SCHEMA IF EXISTS gojoanime;
 
-CREATE SCHEMA IF NOT EXISTS 'gojoanime' DEFAULT CHARACTER SET utf8;
-USE 'gojoanime'
+CREATE SCHEMA IF NOT EXISTS gojoanime DEFAULT CHARACTER SET utf8;
+USE gojoanime
 
 create table gojoanimelogin (
-    iduserlogin NUMBER(38,0) NOT NULL,
+    iduserlogin INT NOT NULL,
     username VARCHAR(20) NOT NULL,
-    loginpasswd VARCHAR2(45 BYTE) NOT NULL,
+    loginpasswd VARCHAR(45) NOT NULL,
     PRIMARY KEY (iduserlogin)
 );
 
