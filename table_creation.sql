@@ -44,4 +44,4 @@ create table ContactUs (
     email VARCHAR(35) NOT NULL, 
     phonenumber VARCHAR(35) NOT NULL,
     PRIMARY KEY (idsession)
-)
+);
