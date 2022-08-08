@@ -38,7 +38,7 @@ create table watchanimepage (
 );
 
 create table ContactUs (
-    idsession NUMBER(38,0) NOT NULL,
+    idsession INT NOT NULL,
     firstname VARCHAR(40) NOT NULL,
     lastname VARCHAR(40) NOT NULL,
     email VARCHAR(35) NOT NULL, 
