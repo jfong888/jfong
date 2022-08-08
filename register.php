@@ -29,56 +29,77 @@
 
         <?php
 
+        require("connect.php");
+
         $name = $username = $email = $phone = $password = $password2 = "";
 
         $nameErr = $usernameErr = $emailErr = $phoneErr = $passwordErr = $password2Err = "";
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        $name = $_POST["name"];
-
-        if (empty($name)) $nameErr = "Please enter a valid username";
+        $name = $_REQUEST["name"];
+        $nameErr = "Please enter a valid username"
+        if (empty($name)) {
+            echo $nameErr;
+        } else {
+           echo $name;
+        }
 
         // check if name only contains letters and whitespace
 
-        if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) $nameErr = "Only letters and white space allowed";
+        if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+            echo $nameErr = "Only letters and white space allowed";
+        }
 
-        $username = $_POST["username"];
+        $username = $_REQUEST["username"];
 
-        if (empty($username)) $usernameErr = "Please enter a valid username";
-
+        if (empty($username)) {
+            echo $usernameErr = "Please enter a valid username";
+        } else {
+            echo $username;
+        }
         // check if username is in database
-        require("connect.php");
-
+        
         $username = $_POST["username"];
 
         $result = $mysqli->query("SELECT * FROM customerinfo WHERE customerusername = '$username'");
 
             if ($username == $results){
                 $usernameErr = "This username has been taken";
-            }
+            } else {
+                $_POST['username'];
+            }    
   
 
-        $email = $_POST["email"];
+        $email = $_REQUEST["email"];
 
-        if (empty($email)) $emailErr = "Please enter a valid email";
-
+        if (empty($email)) {
+            $emailErr = "Please enter a valid email";
+        } else {
+            echo $email;
+        }
         // check if e-mail address is well-formed
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $emailErr = "The email address is incorrect";
 
-        $phone = $_POST["phone"];
+        $phone = $_REQUEST["phone"];
 
-        if (empty($phone)) $phoneErr = "Please enter your phone number";
-
+        if (empty($phone)) {
+            $phoneErr = "Please enter your phone number";
+        } else {
+            echo $phone;
+        }
         // check if phone has 10 digits long
 
         if (!preg_match('/^[0-9]{10}+$/', $phone)) $phoneErr = "Phone number should be 10 digits long";
 
-        $password = $_POST["password"];
+        $password = $_REQUEST["password"];
 
-        if (empty($password)) $passwordErr = "Please enter your password";
-
+        if (empty($password)) {
+            $passwordErr = "Please enter your password";
+        } else {
+            echo $password;
+        }
         // check if password should have at least 1 uppercase letter and 1 lowercase letter
 
         if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z]){6,}/', $password)) $passwordErr = "Please enter a valid password";
@@ -95,39 +116,45 @@
 
     <h2 class="title">Registration</h2>
 
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+    <form action="insert.php"method="post">  
 
-        Full Name: <input type="text" name="name">
+        <label for="name">Full Name:</label> 
+        <input type="text" name="name">
 
         <span class="error"><?php echo $nameErr;?></span>
 
         <br><br>
 
-        UserName: <input type="text" name="username">
+        <label for="username">User Name:</label> 
+        <input type="text" name="username">
 
         <span class="error"><?php echo $usernameErr;?></span>
 
         <br><br>
 
-        Email: <input type="text" name="email">
+        <label for="email">Email:</label> 
+        <input type="text" name="email">
 
         <span class="error"><?php echo $emailErr;?></span>
 
         <br><br>
 
-        Phone Number: <input type="text" name="phone">
+        <label for="phone">Phone Number:</label>  
+        <input type="text" name="phone">
 
         <span class="error"><?php echo $phoneErr;?></span>
 
         <br><br>
 
-        Password: <input type="text" name="password">
+        <label for="password">Password:</label> 
+        <input type="text" name="password">
 
         <span class="error"><?php echo $passwordErr;?></span>
 
         <br><br>
 
-        Confirm Password: <input type="text" name="password2">
+        <label for="password2">Confirm Password:</label>
+        <input type="text" name="password2">
 
         <span class="error"><?php echo $password2Err;?></span>
 
