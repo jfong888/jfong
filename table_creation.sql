@@ -17,6 +17,7 @@ create table customerinfo (
    phonenumber VARCHAR(35) NOT NULL,
    customerpasswd INT NOT NULL,
    email VARCHAR(35),
+   gender VARCHAR(7),
    PRIMARY KEY (idcustomer),
    constraint fk_cinfo_gjl FOREIGN KEY (customerusername) REFERENCES gojoanimelogin (iduserlogin),
    constraint fk_cinfo_gj2 FOREIGN KEY (customerpasswd) REFERENCES gojoanimelogin (iduserlogin)
@@ -37,7 +38,7 @@ create table watchanimepage (
 );
 
 create table ContactUs (
-    idsession NUMBER(38,0) AUTO_INCREMENT,
+    idsession NUMBER(38,0) NOT NULL,
     firstname VARCHAR(40) NOT NULL,
     lastname VARCHAR(40) NOT NULL,
     email VARCHAR(35) NOT NULL, 

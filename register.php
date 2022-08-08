@@ -170,7 +170,7 @@
 
         <br><br>
 
-        <input type="submit" name="submit" value="Submit">  
+        <button type="submit" name="submit"> Submit </button>  
 
     </form>
 
