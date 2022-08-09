@@ -1,9 +1,9 @@
 <?php
    session_start();
    $_SESSION['watchanimepage'] = array(
-     'anime' = $_POST['anime'],
-     'episode' = $_POST['episode'],
-     'episodename' = $_POST['episodename']
+     'anime' => $_POST['anime'],
+     'episode' => $_POST['episode'],
+     'episodename' => $_POST['episodename']
    );
    class Session extends Controller{
     public function StoreSession($session = null, $table='watchanimepage'){
@@ -11,7 +11,11 @@
         if($session != null){
             $columns = implode(',',array_keys($session));
             $values = " ' ".implode("','".array_values($session))." ' ";
-            $query_sql = 
+            $query_sql = "INSERT INTO  watchanimepage VALUES ('anime', 'episode', 'episodename')";
+            $results = $this->con->query($query_sql);
+            if ($results){
+                echo "Sesssion Data inserted Sucessfully";
+            }
         }
     }
 }

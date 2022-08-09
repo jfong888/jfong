@@ -51,7 +51,8 @@
             echo $nameErr = "Only letters and white space allowed";
         }
 
-        $username = $_REQUEST["username"];
+        $usernamedb = $_REQUEST["username"];
+        $username = $_POST["username"];
 
         if (empty($username)) {
             echo $usernameErr = "Please enter a valid username";
@@ -60,9 +61,7 @@
         }
         // check if username is in database
         
-        $username = $_POST["username"];
-
-        $result = $mysqli->query("SELECT * FROM customerinfo WHERE customerusername = '$username'");
+        $results = $mysqli->query("SELECT * FROM gojoanimelogin WHERE username = '$username'");
 
             if ($username == $results){
                 $usernameErr = "This username has been taken";
