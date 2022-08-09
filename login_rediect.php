@@ -7,7 +7,7 @@
 
   if(isset($_POST['username']) && $_POST['username'] == $result && $_POST['password'] == $result2)
   {
-    header("Location:watchlist.html");
+    header("Location:watchlist.php");
   } else {
 
   }

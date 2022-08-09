@@ -37,7 +37,7 @@
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        $name = $_REQUEST["name"];
+        $name = $_POST["name"];
         $nameErr = "Please enter a valid username"
         if (empty($name)) {
             echo $nameErr;
@@ -51,7 +51,6 @@
             echo $nameErr = "Only letters and white space allowed";
         }
 
-        $usernamedb = $_REQUEST["username"];
         $username = $_POST["username"];
 
         if (empty($username)) {
@@ -70,7 +69,7 @@
             }    
   
 
-        $email = $_REQUEST["email"];
+        $email = $_POST["email"];
 
         if (empty($email)) {
             $emailErr = "Please enter a valid email";
@@ -81,7 +80,7 @@
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $emailErr = "The email address is incorrect";
 
-        $phone = $_REQUEST["phone"];
+        $phone = $_POST["phone"];
 
         if (empty($phone)) {
             $phoneErr = "Please enter your phone number";
@@ -92,7 +91,7 @@
 
         if (!preg_match('/^[0-9]{10}+$/', $phone)) $phoneErr = "Phone number should be 10 digits long";
 
-        $password = $_REQUEST["password"];
+        $password = $_POST["password"];
 
         if (empty($password)) {
             $passwordErr = "Please enter your password";
