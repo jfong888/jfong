@@ -13,19 +13,19 @@ create table gojoanimelogin (
 create table customerinfo (
    idcustomer INT NOT NULL,
    customername VARCHAR(45) NOT NULL,
-   customerusername INT NOT NULL,
+   iduserlogin INT NOT NULL,
    phonenumber VARCHAR(35) NOT NULL,
-   customerpasswd INT NOT NULL,
    email VARCHAR(35),
    gender VARCHAR(7),
    PRIMARY KEY (idcustomer),
-   constraint fk_cinfo_gjl FOREIGN KEY (customerusername) REFERENCES gojoanimelogin (iduserlogin),
-   constraint fk_cinfo_gj2 FOREIGN KEY (customerpasswd) REFERENCES gojoanimelogin (iduserlogin)
+   constraint fk_cinfo_gjl FOREIGN KEY (iduserlogin) REFERENCES gojoanimelogin (iduserlogin)
 );
 
 create table watchanimepage (
    idanimesession INT NOT NULL,
-   watchedanime VARCHAR(100) NOT NULL,
+   anime VARCHAR(30) NOT NULL,
+   episode INT(2) NOT NULL,
+   episodename VARCHAR(50) NOT NULL,
    PRIMARY KEY (idanimesession)
 );
 

@@ -1,0 +1,443 @@
+/*
+    Color Theme Swatches in Hex
+    { color: #D2D6D9; }
+    { color: #F25922; }
+    { color: #F24C27; }
+    { color: #A63E26; }
+    { color: #262626; }
+    { color: #F78104; }
+*/
+
+
+body {
+    margin: 8px;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(242,89,34,1) 0%, rgba(250,171,54,1) 100%);
+}
+
+#searchbar {
+    position: relative;
+    margin: 0.5% 40%;
+}
+
+#searchfield {
+    padding: 2% 15% 2% 2%;
+    border: 1px solid gray;
+    border-radius: 0.675rem;
+    background-color: #A63E26;
+    opacity: 0.8;
+}
+
+#searchbtn {
+    padding: 2%;
+    border: 1px solid gray;
+    border-radius: 0.675rem;
+    background-color: gray;
+    color: white;
+    transition: 0.6s;
+}
+
+#searchbtn:hover {
+    color: #262626;
+}
+
+.card {
+    --bs-card-spacer-y: 1rem;
+    --bs-card-spacer-x: 1rem;
+    --bs-card-title-spacer-y: 0.5rem;
+    --bs-card-border-width: 1px;
+    --bs-card-border-color: var(--bs-border-color-translucent);
+    --bs-card-border-radius: 0.375rem;
+    --bs-card-box-shadow: ;
+    --bs-card-inner-border-radius: calc(0.375rem - 1px);
+    --bs-card-cap-padding-y: 0.5rem;
+    --bs-card-cap-padding-x: 1rem;
+    --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
+    --bs-card-cap-color: ;
+    --bs-card-height: ;
+    --bs-card-color: ;
+    --bs-card-bg: #fff;
+    --bs-card-img-overlay-padding: 1rem;
+    --bs-card-group-margin: 0.75rem;
+    margin: 0.5%;
+    position: relative;
+    display: inline-block;
+    min-width: 13rem;
+    max-width: 15rem;
+    height: var(--bs-card-height);
+    word-wrap: break-word;
+    background-color: var(--bs-card-bg);
+    background-clip: border-box;
+    border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+    border-radius: var(--bs-card-border-radius);
+}
+
+main {
+    font-family: 'Carter One';
+}
+
+.rounded-5 {
+    --bs-border-radius-2xl: 0.75rem!important;
+}
+
+.nav-pills {
+    --bs-nav-pills-border-radius: 0.375rem;
+    --bs-nav-pills-link-active-color: #D2D6D9;
+    --bs-nav-pills-link-active-bg: #A63E26;
+}
+
+.nav {
+    --bs-nav-link-color: #262626;
+    --bs-nav-link-hover-color: #D2D6D9;
+}
+
+.bg-gray {
+    --bs-bg-opacity: 1;
+    --bs-gray-500: #adb5bd;
+}
+
+.container {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    max-width: 97%;
+}
+
+.footer-links {
+    text-decoration: none;
+    color: #262626;
+    transition: 0.5s;
+}
+
+.footer-links:hover {
+    color: #D2D6D9;
+}
+
+#footer-logo {
+    margin-right: 2.5%;
+}
+
+#message-part1 {
+    position: absolute;
+    left: 35%;
+    top: 15%;
+}
+
+#message-part2 {
+    position: absolute;
+    left: 45%;
+    top: 25%;
+}
+
+#login-form-area {
+    position: absolute;
+    left: 45%;
+    top: 50%;
+}
+
+#login-form-area h6 {
+    position: absolute;
+    top: 106%;
+    left: 47%;
+}
+
+.login-form-elements {
+    margin: 5px auto;
+}
+
+#form-divider1, #form-divider2 {
+    position: absolute;
+    width: 45%;
+    border-top: solid 2px black;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}
+
+#form-divider2 {
+    right: 0;
+}
+
+.register-btn {
+    position: absolute;
+    top: 125%;
+    width: 100%;
+}
+
+#username, #password {
+    padding: 2% 15% 2% 2%;
+    border: none;
+    border-radius: 0.675rem;
+    background-color: #A63E26;
+    color: #fff;
+    opacity: 0.8;
+}
+
+input:focus {
+    outline: none;
+}
+
+.login-btn {
+    width: 100%;
+    color: grey;
+    background-color: #fff;
+    text-align: center;
+    margin-top: 5px;
+    padding: 15px;
+    border-radius: 25px;
+    border: none;
+    transition: 0.5s;
+}
+
+.login-btn:hover {
+    background-color: rgba(255, 255, 255, 0.57);
+    color: #262626;
+}
+/*about us page*/
+#about-1{
+    margin: 30px;
+    padding: 5px;
+}
+#about-1 h1{
+    text-align: center;
+    color:#262626;
+    font-weight: bold;
+}
+#about-1 p{
+    text-align: center;
+    padding: 3px;
+}
+.about-item{
+    margin: 20px auto;
+    padding: 80px 30px;
+    height: 300px;
+    box-shadow: 0 0 9px rgba(0,0,0.6);
+}
+.about-item i{
+    font-size: 43px;
+    margin: 0;
+}
+.about-item h3{
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.about-item hr{
+    width: 46px;
+    height: 3px;
+    background-color: #A63E26;
+    margin: 0 auto;
+    border: none;
+    text-align: center;
+}
+.about-item:hover{
+    background-color: #A63E26;
+}
+.about-item:hover i,
+.about-item:hover h3,
+.about-item:hover p{
+    color: #adb5bd;
+}
+.about-item:hover hr{
+    background-color: #adb5bd;
+}
+.about-item:hover i{
+    transform: translateY(-20px);
+}
+.about-item:hover i,
+.about-item:hover h3,
+.about-item:hover hr{
+    transition: all 400ms ease-in-out;
+}
+
+html, body { height: 150% }
+
+body {
+    background-color: #f9f9f9;
+}
+
+h1 {
+    text-align: center;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+#register-1{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+#register {
+    background-color: #A63E26;
+    max-width: 700px;
+    width: 100%;
+    border-radius: 15px;
+    padding: 30px 35px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.30);
+}
+#register .title{
+    font-size: 30px;
+    position: relative;
+}
+#register .title::before{
+    content: "";
+    width: 200px;
+    height: 3.5px;
+    bottom: 0;
+    position: absolute;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #A63E26, #F25922);
+}
+.content form .user{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 25px 0 12px 0;
+}
+form .user .input{
+    margin-bottom: 15px;
+    width: calc(100% / 2 -20px);
+}
+form .input span.details{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+.user .input input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 15px;
+    border-radius: 8px;
+    padding-left: 15px;
+    border: 2px solid black;
+    border-bottom-width: 3px;
+    transition: all 0.4s ease;
+}
+form .gender .gender-title{
+    font-size: 20px;
+    font-weight: 500;
+}
+form input[type="radio"]{
+    display: none;
+}
+form .category{
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin: 15px 0;
+}
+form .category label{
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+}
+form .category label .radio{
+    background: white;
+    border-radius: 50%;
+    margin-right: 12px;
+    border: 5px solid transparent;
+    height: 17px;
+    width: 17px;
+    transition: all 0.4s ease;
+}
+#radio-1:checked ~ .category label .one,
+#radio-2:checked ~ .category label .two,
+#radio-3:checked ~ .category label .three{
+    background: #F25922;
+    background-color: #F25922;
+}
+form .button{
+    height: 50px;
+    margin: 30px 0;
+}
+form .button input{
+    color: white;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    background: linear-gradient(135deg, #A63E26, #F25922);
+}
+
+/*contact us*/
+.contact-us{
+  width: 500px;
+  padding: 50px;
+  position: relative;
+  margin: 100px auto;
+  border-radius: 15px;
+  background: #A63E26;
+}
+
+.title h1{
+  color: black;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+}
+
+.form-items .input{
+  width: 100%;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  padding: 15px 40px;
+  background: #fff;
+  border-radius: 8px;
+  border: 2px solid black;
+  border-bottom-width: 3px;
+}
+
+.form-items .input.message{
+  height: 150px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 15px 15px;
+  resize: none;
+}
+
+.form, .form-items{
+    width: 100%;
+  }
+
+.btn{
+  background: grey;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.btn:hover {
+    background: rgb(95, 95, 95);
+}
+
+.btn .fas{
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.form-items{
+  position: relative;
+}
+
+.form-items .fas{
+  color: black;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
