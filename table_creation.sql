@@ -23,18 +23,18 @@ create table customerinfo (
    constraint fk_cinfo_gj2 FOREIGN KEY (customerpasswd) REFERENCES gojoanimelogin (iduserlogin)
 );
 
+create table watchanimepage (
+   idanimesession INT NOT NULL,
+   watchedanime VARCHAR(100) NOT NULL,
+   PRIMARY KEY (idanimesession)
+);
+
 create table many_to_many_anime (
     idcustomer INT NOT NULL,
     idanimesession INT NOT NULL,
     PRIMARY KEY (idcustomer, idanimesession),
     constraint fk_mtma_gjm1 FOREIGN KEY (idcustomer) REFERENCES customerinfo (idcustomer),
     constraint fk_mtma_gjm2 FOREIGN KEY (idanimesession) REFERENCES watchanimepage (idanimesession)
-);
-
-create table watchanimepage (
-   idanimesession INT NOT NULL,
-   watchedanime VARCHAR(100) NOT NULL,
-   PRIMARY KEY (idanimesession)
 );
 
 create table ContactUs (
