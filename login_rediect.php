@@ -1,14 +1,21 @@
 <?php
-  $username = $_POST['username'];
-  $passsword = $_POST['password'];
+ //Written By: Jason Fong 
+ include ("connect.php");
+  
+ if(isset($_POST['Login'])) {
+   $sql->mysqli_query($conn, "SELECT * FROM gojoanimelogin WHERE username = '".$_POST["username"]."' AND loginpasswd = '".$_POST["password"]."' ");
 
-  $result = $mysqli->query("SELECT * FROM gojoanimelogin WHERE username = '$username'");
-  $result2 = $mysqli->query("SELECT * FROM gojoanimelogin WHERE loginpasswd = '$password'");
+   $num = mysqli_num_rows($sql);
 
-  if(isset($_POST['username']) && $_POST['username'] == $result && $_POST['password'] == $result2)
-  {
-    header("Location:watchlist.php");
-  } else {
+   if($num > 0){
+       $row = mysqli_fetch_array($sql);
+       header("Location:watchlist.php");
+       exit();
+   } else {
+       echo '<script>';
+       echo "alert(\"Invalid Username and Password, Please try again\");";
+       echo '</script>';
+   }
 
-  }
+ }
 ?>
