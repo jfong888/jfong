@@ -1,11 +1,10 @@
 <?php
-  $username = $_POST['username'];
-  $passsword = $_POST['password'];
+  session_start();
 
-  $result = $mysqli->query("SELECT * FROM gojoanimelogin WHERE username = '$username'");
-  $result2 = $mysqli->query("SELECT * FROM gojoanimelogin WHERE loginpasswd = '$password'");
+  $mysqli->query('SELECT * FROM gojoanimelogin WHERE username = "$_POST['username']"');
+  $mysqli2->query('SELECT * FROM gojoanimelogin WHERE loginpasswd = "$_POST['password']"');
 
-  if(isset($_POST['username']) && $_POST['username'] == $result && $_POST['password'] == $result2)
+  if(isset($_POST['username']) && $_POST['username'] == $mysqli && $_POST['password'] == $mysqli2)
   {
     header("Location:watchlist.php");
   } else {
