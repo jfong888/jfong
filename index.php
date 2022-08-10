@@ -1,13 +1,21 @@
 <?php
-  session_start();
+  //Written By: Jason Fong 
+  include ("connect.php");
+  
+  if(isset($_POST['Login'])) {
+    $sql->mysqli_query($conn, "SELECT * FROM gojoanimelogin WHERE username = '".$_POST["username"]."' AND loginpasswd = '".$_POST["password"]."' ");
 
-  $mysqli->query('SELECT * FROM gojoanimelogin WHERE username = "$_POST['username']"');
-  $mysqli2->query('SELECT * FROM gojoanimelogin WHERE loginpasswd = "$_POST['password']"');
+    $num = mysqli_num_rows($sql);
 
-  if(isset($_POST['username']) && $_POST['username'] == $mysqli && $_POST['password'] == $mysqli2)
-  {
-    header("Location:watchlist.php");
-  } else {
+    if($num > 0){
+        $row = mysqli_fetch_array($sql);
+        header("Location:watchlist.php");
+        exit();
+    } else {
+        echo '<script>';
+        echo "alert(\"Invalid Username and Password, Please try again\");";
+        echo '</script>';
+    }
 
   }
 ?>
@@ -57,7 +65,7 @@
                         <input id="password" type="password">
                     </div>
                     <div class="login-form-elements">
-                        <input class="login-btn" type="submit" value="Login">
+                        <input class="login-btn" type="submit" id="Login" value="Login">
                     </div>
                 </form>
                 <hr id="form-divider1"><hr id="form-divider2">
